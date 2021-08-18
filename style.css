@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #9b4dca;
+  --light-color: #f4f5f6;
+  --dark-color: #606c76;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light-color);
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--dark-color);
+}
+
+nav {
+  background: var(--dark-color);
+  padding: 1rem 4rem;
+  box-shadow: 0 0.2rem 0.2rem 0.1rem var(--dark-color);
+}
+
+.hamburger {
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+  border: 0.2rem solid var(--primary-color);
+  display: inline-block;
+  overflow: hidden;
+}
+
+#navMenu {
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+}
+
+#navMenu > span {
+  display: block;
+  width: 4rem;
+  height: 0.4rem;
+  border-radius: 999.9rem;
+  background-color: var(--light-color);
+}
+
+#navMenu > span:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+#navMenu,
+#navMenu > span {
+  transition: all 0.4s ease-in-out;
+}
+
+#navMenu.active {
+  transition-delay: 0.8s;
+  transform: translateX(-0.2rem) translateY(0.2rem) rotate(45deg);
+}
+
+#navMenu.active > span:nth-child(2) {
+  width: 0;
+}
+
+#navMenu.active > span:nth-child(1),
+#navMenu.active > span:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+#navMenu.active > span:nth-child(1) {
+  transform: translateY(0.9rem);
+}
+
+#navMenu.active > span:nth-child(3) {
+  transform: translateY(-1.5rem) rotate(90deg);
+}
+
+aside {
+  height: 100vh;
+  width: 100%;
+  max-width: 35rem;
+  background: var(--dark-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-10%) scaleX(0);
+  transform-origin: left;
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+aside.active {
+  transform: translateX(0) scaleX(1);
+}
+
+aside.active {
+  transition-duration: 0.8s;
+  transition-delay: 0.2s;
+}
